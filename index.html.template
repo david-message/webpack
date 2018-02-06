@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- ejs语法 -->
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- 设置favicon -->
+  <% if (htmlWebpackPlugin.options.favIcon && htmlWebpackPlugin.options.favIcon.length > 0) { %>
+    <link rel="shorticon icon" type="image/x-icon" href="<%= htmlWebpackPlugin.options.favIcon %>">
+  <% } %>
+</head>
+
+<body>
+    <div id="content"></div>
+  <div id="indexTest"></div>
+  <div id="indexAlert1"></div>
+  <div id="root"></div>
+</body>
+
+<!-- 是否是开发环境? -->
+<% if (htmlWebpackPlugin.options.devMode) { %>
+    <script src="http://localhost:8088/webpack-dev-server.js"></script>
+<% } %>
+
+</html>
